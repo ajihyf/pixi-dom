@@ -16,16 +16,19 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "scripts": {
     "lint:ts": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint:js": "eslint 'tools/**/*.js'",
     "lint": "npm run lint:js && npm run lint:ts",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build": "rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
-    "test": "jest --coverage",
+    "jest:e2e": "jest -c e2e/jest.config.js",
+    "test:e2e": "start-server-and-test storybook:ci http-get://localhost:6006 jest:e2e",
+    "test:unit": "jest -c jest.config.js",
+    "test": "npm run test:e2e && npm run test:unit -- --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
     "deploy-docs": "node tools/gh-pages-publish",
@@ -33,14 +36,26 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "node tools/semantic-release-prepare",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "storybook": "start-storybook -p 6006",
+    "storybook:ci": "start-storybook -p 6006 --ci",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
+    "@storybook/html": "^4.1.9",
+    "@types/expect-puppeteer": "^3.3.0",
     "@types/jest": "^23.3.2",
+    "@types/jest-environment-puppeteer": "^2.2.1",
+    "@types/jest-image-snapshot": "^2.4.0",
     "@types/node": "^10.11.0",
-    "colors": "^1.3.2",
+    "@types/pixi.js": "^4.8.6",
+    "@types/puppeteer": "^1.11.2",
+    "@types/webpack-env": "^1.13.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.0",
     "commitizen": "^3.0.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
@@ -49,9 +64,12 @@
     "eslint-config-prettier": "^3.6.0",
     "husky": "^1.0.1",
     "jest": "^23.6.0",
+    "jest-image-snapshot": "^2.7.0",
+    "jest-puppeteer": "^3.9.0",
     "lint-staged": "^8.0.0",
     "lodash.camelcase": "^4.3.0",
     "prettier": "^1.14.3",
+    "puppeteer": "^1.11.0",
     "rimraf": "^2.6.2",
     "rollup": "^1.1.1",
     "rollup-plugin-commonjs": "^9.1.8",
@@ -61,11 +79,16 @@
     "rollup-plugin-typescript2": "^0.19.2",
     "semantic-release": "^15.13.3",
     "shelljs": "^0.8.3",
+    "start-server-and-test": "^1.7.11",
     "travis-deploy-once": "^5.0.9",
     "ts-jest": "^23.10.2",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "webpack": "^4.29.0"
+  },
+  "dependencies": {
+    "pixi.js": "^4.8.5"
   }
 }
