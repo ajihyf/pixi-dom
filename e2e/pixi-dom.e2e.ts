@@ -1,10 +1,8 @@
-describe('Button', () => {
-  it('visually looks correct', async () => {
-    // APIs from jest-puppeteer
-    await page.goto('http://localhost:6006/iframe.html?selectedKind=Demo&selectedStory=Button');
-    const image = await page.screenshot();
+import initStoryshots from '@storybook/addon-storyshots';
+import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
 
-    // API from jest-image-snapshot
-    expect(image).toMatchImageSnapshot();
-  });
+initStoryshots({
+  framework: 'html',
+  suite: 'Image storyshots',
+  test: imageSnapshot({ storybookUrl: 'http://localhost:6006' })
 });
