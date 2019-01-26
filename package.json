@@ -38,7 +38,7 @@
     "semantic-release-prepare": "node tools/semantic-release-prepare",
     "travis-deploy-once": "travis-deploy-once",
     "storybook": "start-storybook -p 6006",
-    "storybook:ci": "start-storybook -p 6006 --ci",
+    "storybook:ci": "start-storybook -p 6006 --ci --quiet",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {

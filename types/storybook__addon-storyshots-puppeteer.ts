@@ -13,7 +13,7 @@ declare module '@storybook/addon-storyshots-puppeteer' {
     storybookUrl?: string;
     getMatchOptions?: (
       options: ImageSnapshotOptions
-    ) => { failureThreshold: number; failureThresholdType: 'percent' };
+    ) => { failureThreshold: number; failureThresholdType: 'percent' | 'string' };
     getScreenshotOptions?: (options: ImageSnapshotOptions) => ScreenshotOptions;
     beforeScreenshot?: (page: Page, options: ImageSnapshotOptions) => Promise<void>;
     getGotoOptions?: (options: ImageSnapshotOptions) => NavigationOptions;
