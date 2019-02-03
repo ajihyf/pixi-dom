@@ -65,7 +65,7 @@
     "eslint": "^5.2.1",
     "eslint-config-prettier": "^4.0.0",
     "husky": "^1.0.1",
-    "jest": "^24.0.0",
+    "jest": "^23.6.0",
     "jest-image-snapshot": "^2.7.0",
     "lint-staged": "^8.0.0",
     "lodash.camelcase": "^4.3.0",
@@ -93,5 +93,10 @@
   },
   "dependencies": {
     "pixi.js": "^4.8.5"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "jest"
+    ]
   }
 }
