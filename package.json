@@ -50,7 +50,7 @@
     "@storybook/html": "^4.1.9",
     "@types/jest": "^23.3.2",
     "@types/jest-image-snapshot": "^2.4.0",
-    "@types/node": "^10.11.0",
+    "@types/node": "^11.9.0",
     "@types/pixi.js": "^4.8.6",
     "@types/puppeteer": "^1.11.2",
     "@types/storybook__addon-storyshots": "^3.4.4",
