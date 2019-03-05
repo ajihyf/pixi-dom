@@ -47,7 +47,7 @@
     "@commitlint/config-conventional": "^7.1.2",
     "@storybook/addon-storyshots": "^4.1.11",
     "@storybook/addon-storyshots-puppeteer": "^4.1.11",
-    "@storybook/html": "^4.1.9",
+    "@storybook/html": "^5.0.0",
     "@types/jest": "^24.0.6",
     "@types/jest-image-snapshot": "^2.4.0",
     "@types/node": "^11.9.5",
