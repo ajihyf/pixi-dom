@@ -92,7 +92,7 @@
     "webpack": "^4.29.0"
   },
   "dependencies": {
-    "pixi.js": "^4.8.5"
+    "pixi.js": "^5.0.0"
   },
   "greenkeeper": {
     "ignore": [
