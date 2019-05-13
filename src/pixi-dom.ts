@@ -3,7 +3,5 @@ export default class DummyClass {
     if (a > 2) {
       a++;
     }
-    // tslint:disable-next-line:no-console
-    console.log();
   }
 }
