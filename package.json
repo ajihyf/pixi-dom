@@ -54,7 +54,7 @@
     "@types/pixi.js": "^4.8.7",
     "@types/puppeteer": "^1.12.4",
     "@types/storybook__addon-storyshots": "^4.0.0",
-    "@types/webpack-env": "^1.13.9",
+    "@types/webpack-env": "^1.15.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
